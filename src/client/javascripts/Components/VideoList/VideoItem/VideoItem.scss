@@ -1,0 +1,15 @@
+.video-item {
+    display: flex;
+    border: 1px solid;
+    margin: 1rem 0;
+
+    &__thumbnail {
+        img {
+            max-width: 180px;
+        }
+    }
+
+    &__title {
+        margin-left: 0.5rem;
+    }
+}
