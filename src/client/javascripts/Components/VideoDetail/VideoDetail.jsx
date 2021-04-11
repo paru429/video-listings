@@ -5,7 +5,7 @@ const VideoDetail = ({selectedVideo}) => {
     return (
         Object.keys(selectedVideo).length > 0 ? <div className="video-detail">
             <div className="video-detail__container video-detail__iframe-container">
-                <iframe width="560" height="315" 
+                <iframe className="video-detail__iframe"
                     src={`https://www.youtube.com/embed/${selectedVideo.id.videoId}`}
                     title={selectedVideo.snippet.title}
                     frameBorder="0" 
