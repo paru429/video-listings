@@ -1,3 +1,4 @@
 import App from './App';
+import AppConnect from './AppConnect';
 
-export default App;
+export default AppConnect(App);

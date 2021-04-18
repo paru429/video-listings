@@ -1,15 +1,11 @@
-import React, {useState} from "react";
+import React from "react";
 import SearchBar from '../SearchBar';
 import VideoList from '../VideoList';
 import VideoDetail from '../VideoDetail';
 import youtube from '../../api/youtube';
 import './App.scss';
 
-const App = () => {
-  const [videos, setVideos] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState({});
-  const [showLoader, setShowLoader] = useState(false);
-
+const App = ({videos, setVideos, selectedVideo, setSelectedVideo, showLoader, setShowLoader}) => {
   const onTermSubmit = async (text) => {
     setShowLoader(true);
     try {
