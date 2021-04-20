@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import {updateShowLoader, updateSelectedVideo, updateVideos} from '../../actions';
+import {updateShowLoader, updateSelectedVideo, updateVideos, fetchVideos} from '../../actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -22,7 +22,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     updateVideos,
     updateSelectedVideo,
-    updateShowLoader
+    updateShowLoader,
+    fetchVideos,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps);

@@ -1,3 +1,5 @@
+import youtube from '../api/youtube';
+
 export const updateShowLoader = (showLoader) => {
     return ({
         type: 'SHOW_LOADER',
@@ -25,3 +27,27 @@ export const updateSearchText = (searchText) => {
         searchText
     });
 };
+
+//Using thunk middleware
+
+export const fetchVideos = (text) => {
+    return async dispatch => {
+        dispatch(updateShowLoader(true));
+
+        try {
+          const response = await youtube.get('/search', {
+            params: {
+              q: text
+            }
+          });
+    
+          response.data && dispatch(updateVideos(response.data.items));
+          response.data && dispatch(updateSelectedVideo(response.data.items[0]));
+          dispatch(updateShowLoader(false));
+        }
+        catch {
+          dispatch(updateShowLoader(false));
+          console.log('..... Error', err);
+        }
+    }
+}
