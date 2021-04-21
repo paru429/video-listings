@@ -5,7 +5,7 @@ import VideoDetail from '../VideoDetail';
 import youtube from '../../api/youtube';
 import './App.scss';
 
-const App = ({videos, selectedVideo, showLoader, updateVideos, updateSelectedVideo, updateShowLoader, fetchVideos}) => {
+const App = ({videos, selectedVideo, showLoader, updateSelectedVideo, fetchVideos}) => {
   const onTermSubmit = (text) => fetchVideos(text);
 
   return (

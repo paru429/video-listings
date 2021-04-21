@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import {updateShowLoader, updateSelectedVideo, updateVideos, fetchVideos} from '../../actions';
+import {updateSelectedVideo, fetchVideos} from '../../actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-//Return mapStateToProps either as a function
+//Return mapDispatchToProps either as a function
 // const mapDispatchToProps = (dispatch) => {
 //     return {
 //         setVideos: (videos) => dispatch(updateVideos(videos)),
@@ -20,9 +20,7 @@ const mapStateToProps = (state) => {
 
 //Return mapDispatchToProps as an object
 const mapDispatchToProps = {
-    updateVideos,
     updateSelectedVideo,
-    updateShowLoader,
     fetchVideos,
 }
 
